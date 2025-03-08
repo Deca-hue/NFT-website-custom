@@ -1,0 +1,654 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c2a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+
+/* Elite-Level Loader */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(155deg, #825bc0, #4c23ad); /* Purple and Blue Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-spinner {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #4bb5ff;
+    animation: spin 2s linear infinite;
+}
+
+.spinner-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #4bb5ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Hides loader when content is loaded */
+body.loaded #loader {
+    display: none;
+}
+
+body.loaded #mainContent {
+    display: block; /* Show content after loader */
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #6a4c9c, #5e3c8c);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4bb5ff;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background: linear-gradient(45deg, #8b44ff, #2a3c8f);
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+/* Typewriter Animation */
+@keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+.hero-section h2 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+    white-space: nowrap; /* Ensures the text stays in a single line */
+    overflow: hidden;
+    animation: typewriter 4s steps(30) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+.hero-section p {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.hero-section .explore-btn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  animation: scaleButton 3s ease-in-out infinite;
+}
+
+.hero-section .explore-btn:hover {
+    background-color: #ff4d7f;
+}
+/* Button Animation */
+@keyframes scaleButton {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+/* Marketplace Section */
+.marketplace {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.marketplace h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.nft-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nft-card {
+    background-color: #2a2a3b;
+    width: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.nft-card:hover {
+    transform: translateY(-10px);
+}
+
+.nft-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.nft-card h3 {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.nft-card p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.nft-card button {
+    background-color: #4bb5ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    animation: scaleButton 3s ease-in-out infinite;
+}
+
+.nft-card button:hover {
+    background-color: #6a4c9c;
+}
+
+.educational-content {
+    margin: 40px 20px;
+    padding: 20px;
+    background: #2a2a3b;
+    border-radius: 12px;
+}
+
+.educational-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+   text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-title {
+    background: #4bb5ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.faq-content {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #1c1c2a;
+    border-radius: 8px;
+    color: #ccc;
+}
+
+.price-estimator {
+    margin: 40px 20px;
+    padding: 20px;
+    background: #2a2a3b;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.price-estimator h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#priceForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#priceForm input, #priceForm select, #estimateBtn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+#estimateBtn {
+    background: #4bb5ff;
+    color: white;
+    cursor: pointer;
+}
+
+#estimateBtn:hover {
+    background: #6a4c9c;
+}
+
+.price-result {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #4bb5ff;
+}
+
+.blog-section {
+    margin: 40px 20px;
+    padding: 20px;
+    background: #2a2a3b;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.blog-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.blog-post {
+    margin-bottom: 15px;
+}
+
+.blog-title {
+    background: #4bb5ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.blog-content {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #1c1c2a;
+    border-radius: 8px;
+    color: #ccc;
+}
+
+
+/* Footer Section */
+/* Basic Footer Styles */
+.footer {
+    background-color: #101010;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Logo Section */
+  .footer-logo img {
+    width: 50px;
+    height: auto;
+  }
+  
+  /* Links Section */
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #00bcd4; /* A bright color for hover effect */
+    text-decoration: underline;
+  }
+  
+  /* Social Media Icons Section */
+  .footer-social {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-social .social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-social .social-icon:hover img {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  }
+  /* Animated "Join Our Community" Button */
+.footer-cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #ff007a, #ffcc00);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.join-btn:hover::before {
+  left: 100%;
+}
+
+.join-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 122, 0.6);
+}
+  /* Footer Bottom Section */
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+  }
+  
+  .footer-bottom p {
+    color: #bbb;
+  }
+  
+
+/* General Section Style */
+.nft2-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1c1c2a;
+  }
+  
+  /* NFT Card Style */
+  .nft2-card {
+    width: calc(33.333% - 20px); /* 3 columns */
+   background-color: #fdefff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .nft2-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* NFT Image Style */
+  .nft2-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #eee;
+  }
+  
+  /* NFT Info Section */
+  .nft2-info {
+    padding: 15px;
+  }
+  
+  .nft2-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .nft2-author {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .nft2-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007BFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nft2-price span {
+    font-size: 1.1rem;
+  }
+  
+  .nft2-price .currency {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Testimonials Section */
+.testimonials {
+  background: #1c1c2a;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slider Container */
+.testimonial-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+/* Sliding Container */
+.testimonial-container {
+  display: flex;
+  gap: 20px;
+  animation: slideTestimonials 10s linear infinite;
+}
+
+/* Testimonial Cards */
+.testimonial {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  box-shadow: 0 5px 15px rgba(157, 78, 221, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Hover Effect: Glowing Border */
+.testimonial:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.8);
+  border-color: #9d4edd;
+}
+
+/* Quote Text */
+.quote {
+  font-style: itali;
+ text-wrap: wrap;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+/* User Info */
+.user {
+  margin-top: 15px;
+}
+
+.user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #ff00ff;
+}
+
+.user h4 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.user span {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+@keyframes slideTestimonials {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Slower animation: 30s for a smoother flow */
+.testimonial-container {
+  display: flex;
+  gap: 20px;
+  animation: slideTestimonials 30s linear infinite;
+}
+
+/* Pause animation on hover */
+.testimonial-container:hover {
+  animation-play-state: paused;
+}
+

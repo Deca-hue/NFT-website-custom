@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Loader Section -->
+     <div id="loader" class="loader-overlay">
+        <div class="loader-spinner">
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>NFT Marketplace</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Wallet</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="hero-section">
+            <h2>Explore Unique NFTs</h2>
+            <p>Buy, Sell, and Trade Digital Collectibles</p>
+            <button id="connectWalletBtn" class="explore-btn">Connect Wallet</button>
+        </section>
+
+        <section class="marketplace">
+            <h2>Top NFT Collections</h2>
+            <div class="nft-cards">
+                <!-- NFT Cards will be generated dynamically -->
+            </div>
+        </section>
+    </main>
+    <section class="educational-content">
+        <h2>Learn About NFTs</h2>
+        <div class="faq-item">
+            <button class="faq-title">What is an NFT?</button>
+            <div class="faq-content">
+                <p>An NFT, or non-fungible token, is a unique digital asset that represents ownership of a specific item, such as art, music, or videos, stored on a blockchain.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-title">How to Create an NFT?</button>
+            <div class="faq-content">
+                <p>To create an NFT, choose a blockchain, mint the asset, upload your digital file, and set the metadata and price on an NFT marketplace.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center; font-size: 2rem;">TOP NFT Arts</h2>
+    <div class="nft2-gallery">
+        <div class="nft2-card">
+          <img src="hitman.avif" alt="NFT Art" class="nft2-image" />
+          <div class="nft2-info">
+            <div class="nft2-title">CryptoArt #1</div>
+            <div class="nft2-author">by Kamango</div>
+            <div class="nft2-price">
+              <span>1.5 ETH</span>
+              <span class="currency">≈ $3,000</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="nft2-card">
+          <img src="mamamboga_345x430_crop_center.webp" alt="NFT Art" class="nft2-image" />
+          <div class="nft2-info">
+            <div class="nft2-title">CryptoArt #2</div>
+            <div class="nft2-author">by Thufuyang</div>
+            <div class="nft2-price">
+              <span>2.0 ETH</span>
+              <span class="currency">≈ $4,000</span>
+            </div>
+          </div>
+        </div>
+      
+        <div class="nft2-card">
+          <img src="jam.avif" alt="NFT Art" class="nft2-image" />
+          <div class="nft2-info">
+            <div class="nft2-title">CryptoArt #3</div>
+            <div class="nft2-author">by Mutina</div>
+            <div class="nft2-price">
+              <span>3.0 ETH</span>
+              <span class="currency">≈ $6,000</span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+    <section class="blog-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <button class="blog-title">What Makes an NFT Valuable?</button>
+            <div class="blog-content">
+                <p>The value of an NFT is determined by its rarity, utility, ownership history, and the reputation of its creator.</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <button class="blog-title">How to Invest in NFTs?</button>
+            <div class="blog-content">
+                <p>Start by researching popular marketplaces, identifying emerging artists, and evaluating long-term potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="price-estimator">
+        <h2>Price Estimator</h2>
+        <form id="priceForm">
+            <label for="cryptoAmount">Enter Cryptocurrency Amount:</label>
+            <input type="number" id="cryptoAmount" placeholder="e.g., 1.5" step="0.01">
+            <label for="cryptoType">Select Cryptocurrency:</label>
+            <select id="cryptoType">
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="LTC">Litecoin (LTC)</option>
+            </select>
+            <button type="button" id="estimateBtn">Estimate Price</button>
+        </form>
+        <p id="priceResult" class="price-result"></p>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Community Says</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-container" id="testimonial-container">
+          <!-- Testimonials will be inserted dynamically -->
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="nft.avif" alt="NFT Logo">
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Create</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#" class="social-icon"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="facebook.png" alt="facebook"></a>
+           <a href="#" class="social-icon"><img src="discord.png" alt="Discord"></a>
+          </div>
+        </div>
+           <!-- Join Community Button -->
+    <div class="footer-cta">
+      <a href="#" class="join-btn">Join Our Community</a>
+    </div>
+  </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 NFT Marketplace. All rights reserved.</p>
+        </div>
+      </footer>
+      
+
+    <script src="script.js"></script>
+</body>
+</html>
